@@ -8,7 +8,7 @@ public class HospitalManagementSystem {
     private static final String username = "root";
     private static final String password = "Wj28@krhps";
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -63,8 +63,6 @@ public class HospitalManagementSystem {
             e.printStackTrace();
         }
     }
-
-
     public static void bookAppointment(Patient patient, Doctor doctor, Connection connection, Scanner scanner) {
         System.out.print("Enter Patient Id: ");
         int patientId = scanner.nextInt();
@@ -96,7 +94,6 @@ public class HospitalManagementSystem {
             System.out.println("Either doctor or patient doesn't exist!!!");
         }
     }
-
     public static boolean checkDoctorAvailability(int doctorId, String appointmentDate, Connection connection) {
         String query = "SELECT COUNT(*) FROM appointments WHERE doctor_id = ? AND appointment_date = ?";
         try {
